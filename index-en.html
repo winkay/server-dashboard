@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>INSPUR Liquid Cooled Server Monitor</title>
+  <link rel="stylesheet" href="./lib/normalize.css">
+  <script src="./lib/jquery-3.6.0.js"></script>
+  <script src="./lib/echarts-5.1.2.js"></script>
+  <script src="./lib/pollyfill.js"></script>
+  <link rel="stylesheet" href="./css/index-en.css">
+</head>
+<body>
+<div class="page_container">
+  <div class="title_container">
+    INSPUR Liquid Cooled Server Monitor
+  </div>
+  <div class="charts_container">
+    <div class="charts_column">
+      <div class="charts_column_title">
+        Computing Power
+      </div>
+      <div class="charts_column_content">
+        <div class="power1_container">
+          <div class="chart_col_item chart" id="power1"></div>
+          <div class="content">
+            <span style="font-size: 18px;" id="power1value"></span>
+            <br>
+            <span style="font-size: 10px;">Trillion/s</span>
+          </div>
+        </div>
+        <div class="chart_col_item card">
+          <div class="card_row">
+            <span class="card_row_text">30s Average</span>
+            <span class="card_row_number" id="powerAve1">
+              1.5
+            </span>
+            <span class="card_row_text">Trillion/s</span>
+          </div>
+        </div>
+        <div class="chart_col_item card">
+          <div class="card_row">
+            <span class="card_row_text">1min Average</span>
+            <span class="card_row_number" id="powerAve2">
+              1.5
+            </span>
+            <span class="card_row_text">Trillion/s</span>
+          </div>
+        </div>
+        <div class="chart_col_item card">
+          <div class="card_row">
+            <span class="card_row_text">3min Average</span>
+            <span class="card_row_number" id="powerAve3">
+              1.5
+            </span>
+            <span class="card_row_text">Trillion/s</span>
+          </div>
+        </div>
+        <div class="chart_col_item card">
+          <div class="card_row">
+            <span class="card_row_text">5min Average</span>
+            <span class="card_row_number" id="powerAve4">
+              1.5
+            </span>
+            <span class="card_row_text">Trillion/s</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="charts_column">
+      <div class="charts_column_title">
+        CPU
+      </div>
+      <div class="charts_column_content">
+        <div style="width: 100%;">
+          <div class="current_value">
+            Current:&nbsp;<span id='currentFreq'></span> MHz
+          </div>
+          <div class="chart_col_item chart" id="freqChart"></div>
+        </div>
+        <div style="width: 100%;">
+          <div class="current_value">
+            Current:&nbsp;<span id='currentTemp'></span> ℃
+          </div>
+          <div class="chart_col_item chart" id="temp"></div>
+        </div>
+        <div style="width: 100%;">
+          <div class="current_value">
+            Current:&nbsp;<span id='currentPower'></span> W
+          </div>
+          <div class="chart_col_item chart" id="power2"></div>
+        </div>
+      </div>
+    </div>
+    <div class="charts_column">
+      <div class="charts_column_title">
+        Liquid Cooled
+      </div>
+      <div class="charts_column_content">
+        <div class="chart_col_item water_icons">
+          <div class="water_icon_item">
+            <div class="icon">
+              <img src="./images/icon_wendu.png" alt="">
+            </div>
+            <div class="content">
+              <div class="number" id='current_water_temp'>
+                38<span class="unit">℃</span>
+              </div>
+              <div class="text">
+                Temperature
+              </div>
+            </div>
+          </div>
+          <div class="water_icon_item">
+            <div class="icon">
+              <img src="./images/icon_liusu.png" alt="">
+            </div>
+            <div class="content">
+              <div class="number" id='current_speed'>
+                0.5<span class="unit">LPM</span>
+              </div>
+              <div class="text">
+                Flow Rate
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chart_col_item chart" id="waterTemp"></div>
+        <div class="chart_col_item chart" id="speed"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="./data/cpu.js"></script>
+<script type="text/javascript" src="./data/gflops.js"></script>
+<script src="./js/index-en.js"></script>
+</body>
+</html>
